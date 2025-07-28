@@ -1,37 +1,35 @@
 # API CBC
 
-## Instalação do PHP 8.4
+## Inicialização do projeto
 
-Para rodar o projeto, realizar a instalação do PHP na **versão 8.4** em:
-https://windows.php.net/download#php-8.4
+Para iniciar o projeto de forma local, é necessário ter instalado em sua máquina o banco de dados **MySQL** na versão **8.0** e o PHP na versão **8.4**.
 
-![alt text](/assets/images/readme/image-php.png)
+Após ter realizado a instalação das tecnologias acima, copiar o código do arquivo ***extras/db.sql** e colar no banco de dados para criação das tabelas para este projeto.
 
+Em seguida, faça uma cópia do arquivo **env.sample.ini**, altere seu nome para **env.ini** e insira os valores das variáveis para rodar o projeto.
 
-Após fazer o download, criar uma pasta com o nome php no disco *C:/* e descompactar os arquivos do download feito acima dentro da pasta php criada;
-
-
-Depois, realizar o download e instalação do **Microsoft Visual C++** na mesma página onde foi feito o download do PHP:
-
-![alt text](/assets/images/readme/image-php.png)
-
-
-Após isso, acessar o arquivo **php.ini-development** no caminho *C:/php/php.ini-development* e renomeá-lo para **php.ini**. Abra o arquivo **php.ini** que acabou de renomear com *Administrador* e utilizando o comando *ctrl + f*, encontre o seguinte termo: *"on windows:"*. Ao encontrar, verificar se a linha abaixo tem o seguinte valor: *'; extension_dir = "ext"'*, caso sim, remova o ponto e vírgula do inicio do texto.
-
-Após remover o ponto e vírgula, utilize o mesmo comando de busca e encontre o seguinte texto: *"; extension=pdo_mysql"*. Caso encontre, faça o mesmo removendo o ponto e vírgula. Salve o arquivo e feche;
-
-
-Agora, é necessário criar uma **variável de ambiente** com o caminho da pasta php que acabamos de criar no disco C:/
-
-![alt text](/assets/images/readme/variavel-de-ambiente.png)
-
-
-Após criar a variável de ambiente, acesse o arquivo **host** no seguinte caminho: C:\Windows\System32\drivers\etc. Verifique se existe a linha com o valor 127.0.0.1 localhost da seguinte forma:
-
-![alt text](/assets/images/readme/image-arquivo-host.png)
-
-
-Após todos esses procedimentos, para rodar o projeto localmente, acessar a raiz deste projeto e executar o comando:
+Após todos esses procedimentos, para rodar o projeto localmente, acessar a raiz deste projeto via terminal e execute o comando:
 ~~~php
 php -S localhost:8080
 ~~~
+
+Ao rodar o projeto, utilizar o Postman ou qualquer outro software ou serviço para testar os end-points da aplicação.
+
+Adicionar novo clube:
+POST -> [htt](http://localhost:8080/clube/create)
+Passe no body os valores -> "clube" e "saldo_disponivel";
+
+Listar todos os clubes cadastrados:
+GET -> [htt](http://localhost:8080/clubes)
+
+Procurar por um clube:
+[htt](http://localhost:8080/clube/1)
+Passe o id do clube que deseja encontrar na url;
+
+Editar um clube:
+[htt](http://localhost:8080/clube/1/update)
+Passe no body os valores -> "clube" e/ou "saldo_disponivel" e utilize o id do clube que deseja editar na url;
+
+Remover clube:
+[htt](http://localhost:8080/clube/2/delete)
+Passe o id do clube que deseja remover na url;
