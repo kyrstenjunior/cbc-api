@@ -16,20 +16,20 @@ php -S localhost:8080
 Ao rodar o projeto, utilizar o Postman ou qualquer outro software ou serviço para testar os end-points da aplicação.
 
 Adicionar novo clube:
-POST -> [htt](http://localhost:8080/clube/create)
+POST -> [endpoint](http://localhost:8080/clube/create)
 Passe no body os valores -> "clube" e "saldo_disponivel";
 
 Listar todos os clubes cadastrados:
-GET -> [htt](http://localhost:8080/clubes)
+GET -> [endpoint](http://localhost:8080/clubes)
 
 Procurar por um clube:
-[htt](http://localhost:8080/clube/1)
+GET -> [endpoint](http://localhost:8080/clube/1)
 Passe o id do clube que deseja encontrar na url;
 
 Editar um clube:
-[htt](http://localhost:8080/clube/1/update)
+PUT -> [endpoint](http://localhost:8080/clube/1/update)
 Passe no body os valores -> "clube" e/ou "saldo_disponivel" e utilize o id do clube que deseja editar na url;
 
 Remover clube:
-[htt](http://localhost:8080/clube/2/delete)
+DELETE -> [endpoint](http://localhost:8080/clube/2/delete)
 Passe o id do clube que deseja remover na url;
